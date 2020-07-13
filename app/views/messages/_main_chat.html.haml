@@ -3,11 +3,13 @@
   .main-chat__group
     .main-chat__group__box
       .main-chat__group__box__test
-        test
+        = @group.name
       .main-chat__group__box__member
-        Member:masa
+        member:
+        - @group.users.each do |u|
+          = u.name
     .main-chat__group__edit
-      = link_to "#" do
+      = link_to edit_group_path(@group) do
         Edit
   .main-chat__message
     .main-chat__message__list
@@ -19,10 +21,10 @@
       .main-chat__message__list__messages
         おはよう!
   .main-chat__form
-    .main-chat__form__box
-      %input{type: "text", class: "main-chat__form__box__text", placeholder: "type a message"} 
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .main-chat__form__box__img
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-    %input{type: "submit" ,class: "main-chat__form__send", value: "Send"}
+        = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__inputImage' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'Form__submit'
