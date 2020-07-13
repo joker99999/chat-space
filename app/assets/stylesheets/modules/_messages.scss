@@ -44,14 +44,15 @@
     &__group {
       color: #ffffff;
       // margin-left: 20px;
-      padding: 20px 20px 40px;
+      padding: 20px 20px 0;
       &__name {
         font-size: 15px;
-        // margin-top: 20px;
+        // color: #ffffff;
       }
       &__message {
         font-size: 11px;
         margin-top: 5px;
+        // color: #ffffff;
       }
     }
   }
