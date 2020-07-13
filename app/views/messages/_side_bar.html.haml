@@ -7,19 +7,16 @@
       .side_bar__name__box__icon
       %ul.Icon-list
         %li
-          = link_to "#" do
+          = link_to new_group_path do
             = icon('far', 'edit',  class: "Icon-list__Icon")
         %li
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog',  class: "Icon-list__gear")
   .side_bar__bottom 
-    .side_bar__bottom__group
-      .side_bar__bottom__group__name 
-        techcamp
-      .side_bar__bottom__group__message
-        まだメッセージはありません
-    .side_bar__bottom__group
-      .side_bar__bottom__group__name 
-        techcamp
-      .side_bar__bottom__group__message
-        まだメッセージはありません
+    - current_user.groups.each do |group|
+      .side_bar__bottom__group
+        = link_to '#' , class: "side_bar__bottom__group" do
+          .side_bar__bottom__group__name 
+            = group.name
+          .side_bar__bottom__group__message
+            メッセージはまだありません
