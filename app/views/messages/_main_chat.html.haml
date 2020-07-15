@@ -1,5 +1,4 @@
 .main-chat
-
   .main-chat__group
     .main-chat__group__box
       .main-chat__group__box__test
@@ -11,15 +10,8 @@
     .main-chat__group__edit
       = link_to edit_group_path(@group) do
         Edit
-  .main-chat__message
-    .main-chat__message__list
-      .main-chat__message__list__box
-        .main-chat__message__list__box__name
-          masa
-        .main-chat__message__list__box__day
-          2020/7/9[wed]20:06
-      .main-chat__message__list__messages
-        おはよう!
+  .main-chat__message      
+    = render @messages     
   .main-chat__form
     = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .main-chat__form__box__img

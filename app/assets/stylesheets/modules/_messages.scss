@@ -99,6 +99,7 @@
     height: calc(100vh - 100px - 90px);
     width: calc(100vw - 300px);
     background-color: #fafafa;
+    overflow: scroll;
     &__list {
       margin-left: 40px;
       &__box {
@@ -119,7 +120,8 @@
         font-size: 14px;
         margin-top: 12px;
         padding-bottom: 46px;
-      } 
+      }
+      
     }
   }
   &__form {
