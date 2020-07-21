@@ -44,14 +44,16 @@
     &__group {
       color: #ffffff;
       // margin-left: 20px;
-      padding: 20px 20px 40px;
+      padding: 20px 20px 0;
+      text-decoration: none;
       &__name {
         font-size: 15px;
-        // margin-top: 20px;
+        // color: #ffffff;
       }
       &__message {
         font-size: 11px;
         margin-top: 5px;
+        // color: #ffffff;
       }
     }
   }
@@ -97,6 +99,7 @@
     height: calc(100vh - 100px - 90px);
     width: calc(100vw - 300px);
     background-color: #fafafa;
+    overflow: scroll;
     &__list {
       margin-left: 40px;
       &__box {
@@ -117,7 +120,8 @@
         font-size: 14px;
         margin-top: 12px;
         padding-bottom: 46px;
-      } 
+      }
+      
     }
   }
   &__form {
@@ -126,36 +130,44 @@
     background-color: #d2d2d2;
     padding: 20px 45px 20px 15px;
     display: flex;
-    &__box {
-      width: 100vw;
-      background-color: #ffffff;
-      position: relative;
-      &__text {
+    // &__box {
+    //   width: 100vw;
+    //   background-color: #ffffff;
+    //   position: relative;
+      .Form {
+        display:flex;
         width: 100%;
-        height: 50px;
-        border: none;
-        padding-left: 10px;
-      }
-      &__img {
-        position: absolute;
-        top: 17px;
-        right: 10px;
-        .input-box__image {
-          &__file {
-            display: none;
+
+        .main-chat__form__box__img{
+          position: relative;
+          width: 100%;
+          .Form__inputContent {
+            width: 100%;
+            height: 50px;
+            border: none;
+            padding-left: 10px;
+          }
+          .Form__inputImage {
+            position: absolute;
+            line-height: 50px;
+            right: 10px;
+            
+              input.Hidden {
+                display: none;
+              }
+            
           }
         }
+        .Form__submit {
+          background-color: #38AEF0;
+          border: none;
+          color: #fff;
+          font-size: 16px;
+          height: 50px;
+          margin-left: 15px;
+          padding: 0 30px;
+        }
       }
-    }
-    &__send {
-      background-color: #38AEF0;
-      border: none;
-      color: #fff;
-      font-size: 16px;
-      height: 50px;
-      margin-left: 15px;
-      padding: 0 30px;
-    }
   }
 }
 .Icon-list {
