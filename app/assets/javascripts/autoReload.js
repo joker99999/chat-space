@@ -57,7 +57,7 @@ $(function(){
           insertHTML += buildHTML(message)
         });
         $('.main-chat__message').append(insertHTML);
-        $('.main-chat__message').animate({ scrollTop: $('..main-chat__message')[0].scrollHeight});
+        $('.main-chat__message').animate({ scrollTop: $('.main-chat__message')[0].scrollHeight});
       }
     })
     .fail(function() {
